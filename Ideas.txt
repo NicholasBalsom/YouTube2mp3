@@ -1,0 +1,5 @@
+Rubix cube solver
+Pathfinder (maze solver)
+Bathroom sign out (Concert ticket type sign out)
+Jersey numbers
+Django website (ex. Studnt management system)
