@@ -4,3 +4,5 @@ Bathroom sign out (Concert ticket type sign out)
 Jersey numbers
 Django website (ex. Studnt management system)
 Automatic attendance system
+Update last years project (YT2MP3)
+Pedestrian crosswalk detection
