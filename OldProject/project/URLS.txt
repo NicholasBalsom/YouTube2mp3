@@ -1,0 +1,7 @@
+VAILD URL: https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUJcmljayByb2x
+INVAILD URL: https://www.youtube.com/watch?v=
+VALID YT PLAYLIST: https://www.youtube.com/playlist?list=PLP3kvqg_Ut86PFpWW3orO3DXiIpK-B-GI
+INVALID YT PLAYLIST: https://www.youtube.com/playlist?list
+VALID SPOTIFY PLAYLIST: https://open.spotify.com/playlist/5OO6uyRtTv1w6rMiKdqHPV?si=2d1a8f8ee4e04c95
+VALID SPOTIFY ALBUM: https://open.spotify.com/album/05jbNkYoEQdjVDHEHtg1gY?si=gEMXkv9TQ_OEBMBu7whr2A
+INVALID SPOTIFY: https://open.spotify.com/album/
