@@ -1,1 +1,7 @@
 python manage.py runserver
+
+git status
+git add . # add all files
+git commit -am "message"
+git push
+git pull
