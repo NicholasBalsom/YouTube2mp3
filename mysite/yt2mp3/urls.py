@@ -5,6 +5,6 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("download/youtube", views.youtue, nmae="youtube"),
+    path("download/youtube", views.youtube, name="youtube"),
     path("download/spotify", views.spotify, name="spotify"),
 ]
