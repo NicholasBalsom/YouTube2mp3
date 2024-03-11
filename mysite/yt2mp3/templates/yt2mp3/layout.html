@@ -10,29 +10,19 @@
 <body>
     <ul class="nav">
         <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">Home</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="{% url 'youtube' %}">Download from YouTube</a>
         </li>
-        
         <li class="nav-item">
             <a class="nav-link" href="{% url 'spotify' %}">Download from Spotify</a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link" href="">Link</a>
-        </li>
-    
-        <li class="nav-item">
-            <a class="nav-link" href="">Link</a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link" href="">Link</a>
-        </li>
-        
+        </li> 
     </ul>
     <hr>
-    
+
     {% block body %}
     {% endblock %}
+
 </body>
 </html>
