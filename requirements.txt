@@ -1,4 +1,0 @@
-pip install git+https://github.com/rgryta/pytube.git@main
-pip install tabulate
-pip install spotipy
-pip install python-dotenv
