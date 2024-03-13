@@ -1,2 +1,6 @@
 # add files to ignore
+
+# Virtual Environments
+.venv
+# Environment Variables
 .env
