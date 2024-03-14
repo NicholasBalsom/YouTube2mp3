@@ -1,6 +1,11 @@
 # add files to ignore
 
+
+__pycache__/
+
 # Virtual Environments
 .venv
-# Environment Variables
+
+# dotenv
 .env
+
