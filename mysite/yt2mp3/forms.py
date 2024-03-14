@@ -1,11 +1,9 @@
 from django import forms
 
 
-class NewYoutubeForm(forms.Form):
-    pass
-    # url = forms.URLField()
+class NewYouTubeForm(forms.Form):
+    url = forms.URLField(label="Video URL")
 
 
 class NewSpotipyForm(forms.Form):
-    pass
-    # url = forms.URLField()
+    url = forms.URLField(label="Spotify Album/Playlist URL")
