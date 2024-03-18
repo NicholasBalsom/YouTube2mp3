@@ -1,6 +1,5 @@
 # add files to ignore
 
-
 __pycache__/
 
 # Virtual Environments
