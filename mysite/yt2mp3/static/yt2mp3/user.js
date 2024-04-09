@@ -1,4 +1,4 @@
-function interface() {
-    
-    console.log('It ran');
+function ThemeToggle() {
+    var element = document.body;
+    element.classList.toggle("light-mode");
 }
