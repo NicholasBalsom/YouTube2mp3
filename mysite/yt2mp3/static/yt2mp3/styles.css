@@ -1,25 +1,51 @@
+/* Arial (sans-serif)
+Verdana (sans-serif)
+Tahoma (sans-serif)
+Trebuchet MS (sans-serif)
+Times New Roman (serif)
+Georgia (serif)
+Garamond (serif)
+Courier New (monospace)
+Brush Script MT (cursive) */
+
+/* Serif
+Sans-serif
+Monospace
+Cursive
+Fantasy 
+Fall back fonts^^*/
 :root {
     --text-color-base: white;
     --text-color-nav: white;
-    --color-dark-grey: rgb(25,25,25);
+    --color-dark-grey: rgb(45,45,45);
+    --color-background-grey: rgb(65, 65, 65);
 }
 body {
     padding: 10px;
-    background-color: rgb(65, 65, 65);
+    background-color: var(--color-background-grey);
 }
 
-a.nav-link {
-    color: var(--text-color-nav);
-}
 h1 {
     color: var(--text-color-base);
 }
-form {
-    color: var(--text-color-base);
+a.nav-link {
+    color: var(--text-color-nav);
 }
 hr {
     position: relative;
     border: none;
     height: 0.025vh;
     background: var(--color-dark-grey);
+}
+form {
+    color: var(--text-color-base);
+}
+input {
+    color: var(--text-color-base);
+    background: var(--color-dark-grey);
+    border-color: var(--color-dark-grey);
+    border-radius: 5px;
+    border-style: none;
+    box-shadow: none;
+    padding: 0vh 1vh 0vh 1vh;
 }
