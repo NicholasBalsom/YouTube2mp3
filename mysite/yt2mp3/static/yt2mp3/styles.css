@@ -1,3 +1,25 @@
+:root {
+    --text-color-base: white;
+    --text-color-nav: white;
+    --color-dark-grey: rgb(25,25,25);
+}
 body {
     padding: 10px;
+    background-color: rgb(65, 65, 65);
+}
+
+a.nav-link {
+    color: var(--text-color-nav);
+}
+h1 {
+    color: var(--text-color-base);
+}
+form {
+    color: var(--text-color-base);
+}
+hr {
+    position: relative;
+    border: none;
+    height: 0.025vh;
+    background: var(--color-dark-grey);
 }
