@@ -42,7 +42,7 @@ hr {
     position: relative;
     border: none;
     height: 0.035vh;
-    background: var(--color-dark-grey);
+    background: black;
 }
 div.form-group {
     max-width: fit-content;
@@ -60,13 +60,14 @@ input {
     border-radius: 5px;
     border-style: none;
     box-shadow: none;
+    outline-style: none;
     padding: 0vh 1vh 0vh 1vh;
 }
 
 button.toggle-theme {
-    max-width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+    position: absolute;
+    right: 1vh;
+    bottom: 1vh;
     color: var(--color-dark-grey);
     background: var(--color-dark-grey);
     border-color: var(--color-dark-grey);
