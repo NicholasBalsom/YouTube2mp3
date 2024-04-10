@@ -1,4 +1,6 @@
 function ThemeToggle() {
     var element = document.body;
-    element.classList.toggle("light-mode");
+    const thing = document.querySelector("ul.nav");
+    // element.classList.toggle("light-mode");
+    thing.classList.toggle("light-mode");
 }
