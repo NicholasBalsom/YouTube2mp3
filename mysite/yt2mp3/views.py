@@ -17,6 +17,7 @@ def youtube(request):
             url = form.cleaned_data["url"]
             # file = utils.youtube(url)
             # return render(request, "yt2mp3/youtube.html", {"file": file})
+            return render(request, "yt2mp3/youtube.html", {"url": url})
         else:
             return render(request, "yt2mp3/youtube.html", {"message": "Video was unable to be downloaded."})
 
