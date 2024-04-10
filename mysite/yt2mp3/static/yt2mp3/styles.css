@@ -15,27 +15,34 @@ Cursive
 Fantasy 
 Fall back fonts^^*/
 :root {
-    /* --text-color-base: white;
-    --text-color-nav: white; */
+    --text-color-base: white;
+    --text-color-nav: white;
     --text-color-light: black;
     --text-color-dark: white;
     --color-dark-grey: rgb(45,45,45);
     --color-background-grey: rgb(65, 65, 65);
     --color-background-white: white;
+    --color-background-special: rgb(155, 155, 155);
 }
 .light-mode {
     background-color: var(--color-background-white);
     color: var(--text-color-light);
 }
+.light-mode-special {
+    background-color: var(--color-background-special);
+    color: var(--text-color-light);
+}
+.dark-mode {
+    color: var(--text-color-dark);
+}
 body {
     display: grid;
     padding: 10px;
     background-color: var(--color-background-grey);
+    color: white;
 }
-h1 {
-    color: var(--text-color-dark);
-}
-a.nav-link {
+
+a {
     color: var(--text-color-dark);
 }
 hr {
@@ -49,10 +56,6 @@ div.form-group {
     margin-left: auto;
     margin-right: auto;
 }
-
-form {
-    color: var(--text-color-dark);
-}
 input {
     color: var(--text-color-dark);
     background: var(--color-dark-grey);
@@ -63,7 +66,6 @@ input {
     outline-style: none;
     padding: 0vh 1vh 0vh 1vh;
 }
-
 button.toggle-theme {
     position: absolute;
     right: 1vh;
@@ -74,5 +76,6 @@ button.toggle-theme {
     border-radius: 5px;
     border-style: none;
     box-shadow: none;
+    outline-style: none;
     padding: 0vh 1vh 0vh 1vh;
 }
