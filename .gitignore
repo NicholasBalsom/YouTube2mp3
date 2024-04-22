@@ -8,3 +8,4 @@ __pycache__/
 # dotenv
 .env
 
+*.mp3

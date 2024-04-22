@@ -5,6 +5,10 @@
     <form action="{% url 'youtube' %}" method="post">
         {% csrf_token %}
         {{ form }}
-        <input type="submit" name="submit" value="Download">
+        {% if not file %}
+            <input type="submit" name="submit" value="Upload">
+        {% else %}
+            <a href="{% url 'download_mp3' file %}" download>Download</a>
+        {% endif %}
     </form>
 {% endblock %}
