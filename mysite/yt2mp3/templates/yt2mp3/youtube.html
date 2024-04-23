@@ -1,14 +1,12 @@
 {% extends "yt2mp3/layout.html" %}
 
 {% block body %}
-    <h1>Youtube</h1>
-    <form action="{% url 'youtube' %}" method="post">
-        {% csrf_token %}
-        {{ form }}
-        {% if not file %}
-            <input type="submit" name="submit" value="Upload">
-        {% else %}
-            <a href="{% url 'download_mp3' file %}" download>Download</a>
-        {% endif %}
-    </form>
+    <div class="form-group">
+        <h1>Youtube</h1>
+        <form action="{% url 'youtube' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" name="submit" value="Download">
+        </form>
+    </div>
 {% endblock %}

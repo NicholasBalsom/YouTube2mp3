@@ -1,7 +1,33 @@
-body {
-    padding: 10px;
-}
+/* Arial (sans-serif)
+Verdana (sans-serif)
+Tahoma (sans-serif)
+Trebuchet MS (sans-serif)
+Times New Roman (serif)
+Georgia (serif)
+Garamond (serif)
+Courier New (monospace)
+Brush Script MT (cursive) */
 
-.form {
-    width: 600px;
+/* Serif
+Sans-serif
+Monospace
+Cursive
+Fantasy 
+Fall back fonts^^*/
+:root {
+    /* --text-color-base: white;
+    --text-color-nav: white; */
+    --text-color-light: black;
+    --text-color-dark: white;
+    --color-dark-grey: rgb(45,45,45);
+    --color-background-grey: rgb(65, 65, 65);
+    --color-background-white: white;
+}
+.light-mode {
+    background-color: var(--color-background-white);
+    color: var(--text-color-light);
+}
+body {
+    display: grid;
+    padding: 10px;
 }
