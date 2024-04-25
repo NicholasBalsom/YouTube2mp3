@@ -17,6 +17,6 @@ function ThemeToggle() {
 function BurgerNav() {
     const spans = document.querySelectorAll('span')
     spans.forEach((span) => {
-        span.classList.toggle('is-active');
+        span.getEle;
     });
 }
