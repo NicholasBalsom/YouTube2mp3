@@ -92,27 +92,23 @@ class InputError(Exception):
 
 def video(url, song_list):
     try:
-        data = download_audio(url, input_checker())
+        data = download_audio(url)
         song_list.append(data)
         return song_list
     except InputError:
         pass
 
 
-def youtube_playlist(p_url, song_list):
-    try:
-        input_choice = input_checker()
-        if input_choice:
-            filter_choice = True
-        else:
-            filter_choice = False
-        playlist = Playlist(p_url)
-        for url in playlist.video_urls:
-            data = download_audio(url, filter_choice)
-            song_list.append(data)
-        return song_list
-    except InputError:
-        pass
+# def youtube_playlist(p_url, song_list):
+
+#             filter_choice = False
+#         playlist = Playlist(p_url)
+#         for url in playlist.video_urls:
+#             data = download_audio(url, filter_choice)
+#             song_list.append(data)
+#         return song_list
+#     except InputError:
+#         pass
 
 
 def spotify(s_url, song_list):
@@ -153,57 +149,17 @@ def search_video(song_name, artist_name):
 
 
 # defines a function for downloading from yt, takes url and video/audio choice as input
-def download_audio(yt_url, filter_choice):
+def download_audio(yt_url):
     if re.search(r"(?:v=|\/)([0-9A-Za-z_-]{11}).*", yt_url):
         print(f"\n>Downloading audio: {yt_url}", end="")
-        # try except block to handle VideoUnavailable errors
-        try:
-            # creates a Youtube object named yt
-            yt = YouTube(yt_url)
-            yt.title = yt.title.replace(" ", "_")
-            # sets a download path
-            d_path = f"{USER_DIRECTORY}/Downloads/{yt.title}.mp4"
-
-            def check_download():
-                # creates a variable with the relevant data for downloading
-                file = yt.streams.filter(only_audio=filter_choice).first()
-                # downloads the file variable to the set directory
-                file.download(output_path=USER_DIRECTORY + "/Downloads")
-                # conditional for checking if the file to download exists or not
-                if os.path.exists(d_path):
-                    return [yt.title, SUCCESS]
-                else:
-                    return [yt.title, FAILED]
-
-        except exceptions.VideoUnavailable:
-            print(f"Video: {yt_url} is unavailable")
-        try:  # try except block for handling AgeRestrictedError
-            # conditional for checking if there is an already existing file in downloads
-            if os.path.exists(d_path):
-                # fmt: off
-                if (input(f"\nAlready existing file named {yt.title} in Downloads, do you wish to overwrite?(y/n): ").lower()== "y"):  # fmt: on
-                    check_download()
-                else:
-                    return [yt.title, SUCCESS]
-            else:
-                check_download()  # if there is no already existing file, download
-        except exceptions.AgeRestrictedError:
-            print(f"\nVideo: {yt_url} is unavailable (Age Restricted)")
-            return [yt.title, FAILED]
+        yt = YouTube(yt_url)
+        video_title = yt.title
+        stream = yt.streams.filter(only_audio=True).first()
+        mp3_filename = f"{video_title}.mp3"
+        stream.download(filename=mp3_filename, output_path="tmp")
+        return mp3_filename
     else:
-        print(URL_REGEX_ERROR)
-    return [yt.title, SUCCESS]
-
-
-# function for asking the user if they want video or file
-def input_checker():
-    filter_choice = input("Do you want to download as video file or audio file (v/a)?: ").lower()
-    if filter_choice == "v":
-        return False
-    elif filter_choice == "a":
-        return True
-    else:  # handling incorrect inputs
-        raise InputError
+        print("Did NOT WORK GAGAGGW")
 
 
 if __name__ == "__main__":
