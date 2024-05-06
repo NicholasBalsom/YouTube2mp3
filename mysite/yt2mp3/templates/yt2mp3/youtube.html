@@ -8,7 +8,8 @@
         {% if not file %}
             <input type="submit" name="submit" value="Upload">
         {% else %}
-            <a href="{% url 'download' file %}">Download</a>
+            <a href="{% url 'download' file %}">Download</a><br><br>
+            <a href="{% url 'youtube' %}">Back</a>
         {% endif %}
         
     </form>

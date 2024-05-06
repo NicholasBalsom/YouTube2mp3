@@ -19,7 +19,7 @@ def youtube(request):
 
         if form.is_valid():
             url = form.cleaned_data["url"]
-            mp3_filename = utils.download_audio(url)
+            mp3_filename = utils.upload_audio(url)
             print(mp3_filename)
             return render(request, "yt2mp3/youtube.html", {"file": mp3_filename})
         else:
@@ -43,7 +43,7 @@ def spotify(request):
 
 
 def download(request, mp3_filename):
-    mp3_path = os.path.join(settings.MEDIA_ROOT, "tmp", mp3_filename)
+    mp3_path = os.path.join(settings.MEDIA_ROOT, "yt2mp3/tmp", mp3_filename)
     if os.path.exists(mp3_path):
         with open(mp3_path, "rb") as mp3_file:
             response = HttpResponse(mp3_file.read(), content_type="audio/mpeg")
