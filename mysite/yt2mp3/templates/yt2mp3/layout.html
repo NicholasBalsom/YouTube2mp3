@@ -2,22 +2,19 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YT2MP3</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="{% static 'yt2mp3/styles.css' %}"> -->
-    <link rel="stylesheet" href="/static/yt2mp3/styles.css?{% now "U" %}"/>
-    
+    <link rel="stylesheet" href="/static/yt2mp3/styles.css?{% now " U" %}" />
+    <script src="https://cdn.jsdelivr.net/npm/kute.js@2.2.4/dist/kute.min.js"></script>
 </head>
+
 <body>
-    <div class="hamburger">
-        <button class="btn-hamburger" onclick="BurgerNav()">x</button>
-        <span class="line" id="top"></span>
-        <span class="line" id="middle"></span>
-        <span class="line" id="bottom"></span>
-    </div>
     <ul class="nav">
         <li class="nav-item">
             <a class="nav-link" href="{% url 'index' %}">Home</a>
@@ -27,21 +24,56 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{% url 'spotify' %}">Download from Spotify</a>
-        </li> 
+        </li>
     </ul>
     <hr>
 
-    
+
     {% block body %}
     {% endblock %}
 
+    <div class="spacer layer1"></div>
 
-    <button class="toggle-theme" onclick="ThemeToggle()"> x </button>
+    <div class="spacer layer2 flip"></div>
+    <section class="pink">
+        <h1>curve</h1>
+        <p>At mollitia facilis perferendis nihil molestias
+            vero dolore doloremque expedita commodi eligendi?
+            Corrupti, obcaecati aut suscipit excepturi cum
+            quisquam fugit quibusdam saepe? Sint,
+            exercitationem dolorum explicabo delectus
+            nostrum voluptatum deserunt?
+        </p>
+        <svg id="visual" viewBox="0 0 960 540" width="960" height="540" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+            <g transform="translate(436.08803358568593 288.40860970064705)">
+                <path id="blob1"
+                    d="M140.2 -136.7C185.2 -95.2 227.6 -47.6 232.3 4.7C237 57 204.1 114.1 159.1 146.6C114.1 179.1 57 187 12.6 174.4C-31.8 161.8 -63.6 128.6 -86.5 96.1C-109.3 63.6 -123.2 31.8 -134.1 -11C-145.1 -53.7 -153.1 -107.5 -130.3 -149C-107.5 -190.5 -53.7 -219.7 -3.1 -216.7C47.6 -213.6 95.2 -178.2 140.2 -136.7"
+                    fill="#BB004B">
+                </path>
+            </g>
+            <g transform="translate(476.1868748905082 313.06168094903643)" style="visibility: hidden">
+                <path id="blob2"
+                    d="M169.1 -170.3C210.9 -127.3 231 -63.6 216.6 -14.4C202.2 34.9 153.4 69.8 111.6 92.3C69.8 114.8 34.9 124.9 -10.5 135.4C-55.9 145.9 -111.7 156.7 -150.7 134.2C-189.7 111.7 -211.9 55.9 -213.5 -1.6C-215.2 -59.2 -196.3 -118.3 -157.3 -161.3C-118.3 -204.3 -59.2 -231.2 2.2 -233.4C63.6 -235.6 127.3 -213.3 169.1 -170.3"
+                    fill="#BB004B"></path>
+            </g>
+        </svg>
+    </section>
+    <div class="spacer layer2"></div>
+    <script>
+        const tween = KUTE.fromTo(
+            '#blob1',
+            { path: '#blob1' },
+            { path: '#blob2' },
+            {repeat: 999, duration: 3000, yoyo: true }
+        )
+        tween.start()
+    </script>
+     <button class="toggle-theme" onclick="ThemeToggle()"> x </button>
 
-    <hr>
-    <footer>
-        <h2>Footer Placeholder</h2>
-    </footer>
-    <script src="/static/yt2mp3/user.js?{% now "U" %}"/></script>
+     <script src="/static/yt2mp3/user.js?{% now " U" %}" />
+     </script>
+
 </body>
+
 </html>
