@@ -31,7 +31,10 @@
 
     {% block body %}
     {% endblock %}
+    <button class="toggle-theme" onclick="ThemeToggle()"> x </button>
 
+    <script src="/static/yt2mp3/user.js?{% now " U" %}" />
+    </script>
     <div class="spacer layer1"></div>
 
     <div class="spacer layer2 flip"></div>
@@ -69,10 +72,6 @@
         )
         tween.start()
     </script>
-     <button class="toggle-theme" onclick="ThemeToggle()"> x </button>
-
-     <script src="/static/yt2mp3/user.js?{% now " U" %}" />
-     </script>
 
 </body>
 

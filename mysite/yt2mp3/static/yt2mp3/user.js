@@ -2,6 +2,7 @@ function ThemeToggle() {
     const body = document.body;
     const links = document.querySelectorAll('a');
     const inputs = document.querySelectorAll('input');
+    const buttons = document.querySelectorAll('button');
 
     links.forEach((link) => {
         link.classList.toggle('light-mode');
@@ -11,13 +12,12 @@ function ThemeToggle() {
         input.classList.toggle('light-mode-special');
     });
 
-    body.classList.toggle('light-mode');
-}
-
-function BurgerNav() {
-    const spans = document.querySelectorAll('span')
-    spans.forEach((span) => {
-        span.getEle;
+    buttons.forEach((button) => {
+        button.classList.toggle('light-mode-button');
     });
+
+    body.classList.toggle('light-mode');
+
+
 }
 

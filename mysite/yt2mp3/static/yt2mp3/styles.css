@@ -32,6 +32,9 @@ Fall back fonts^^*/
     background-color: var(--color-background-special);
     color: var(--text-color-light);
 }
+.light-mode-button {
+    background: brown;
+}
 .dark-mode {
     color: var(--text-color-dark);
 }
@@ -52,12 +55,34 @@ hr {
     height: 0.035vh;
     background: black;
 }
+div.form-group {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+input {
+    color: var(--text-color-dark);
+    background: var(--color-dark-grey);
+    border-color: var(--color-dark-grey);
+    border-radius: 5px;
+    border-style: none;
+    box-shadow: none;
+    outline-style: none;
+    padding: 0vh 1vh 0vh 1vh;
+}
 
-.theme-toggle {
-    content: '';
-    position: absolute;
-    top: 10px;
-    right: 10px;
+button.toggle-theme {
+    position: fixed;
+    right: 1vh;
+    bottom: 1vh;
+    color: var(--color-dark-grey);
+    background: var(--color-dark-grey);
+    border-color: var(--color-dark-grey);
+    border-radius: 5px;
+    border-style: none;
+    box-shadow: none;
+    outline-style: none;
+    padding: 0vh 1vh 0vh 1vh;
 }
 section {
     position: relative;
@@ -97,6 +122,14 @@ section {
     background-size: cover;
 }
 
+.flip {
+    transform: rotate(180deg);
+}
 .layer1 {
     background-image: url('./layer1.svg');
+}
+
+.blob-motion {
+    position: absolute;
+    transform: translateY(-20%);
 }
