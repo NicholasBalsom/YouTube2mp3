@@ -32,22 +32,30 @@ def youtube(request):
 
 def spotify(request):
     if request.method == "POST":
+        utils.clean_tmp()
         form = NewSpotipyForm(request.POST)
         if form.is_valid():
             url = form.cleaned_data["url"]
-            # fileset = utils.spotify(url)
-            # return render()
+            utils.spotify(url)
+            zip_filename = utils.upload_zip()
+            return render(request, "yt2mp3/spotify.html", {"file": zip_filename})
     else:
         form = NewSpotipyForm()
         return render(request, "yt2mp3/spotify.html", {"form": form})
 
 
-def download(request, mp3_filename):
-    mp3_path = os.path.join(settings.MEDIA_ROOT, "yt2mp3/tmp", mp3_filename)
-    if os.path.exists(mp3_path):
-        with open(mp3_path, "rb") as mp3_file:
-            response = HttpResponse(mp3_file.read(), content_type="audio/mpeg")
-            response["Content-Disposition"] = 'attachment; filename="{}"'.format(mp3_filename)
+def download(request, filename: str):
+    if filename.endswith(".mp3"):
+        path = os.path.join(settings.MEDIA_ROOT, "yt2mp3/tmp/songs", filename)
+        content_type = "audio/mpeg"
+    else:
+        path = os.path.join(settings.MEDIA_ROOT, "yt2mp3/tmp/zip", filename)
+        content_type = "application/zip"
+
+    if os.path.exists(path):
+        with open(path, "rb") as file:
+            response = HttpResponse(file.read(), content_type=content_type)
+            response["Content-Disposition"] = 'attachment; filename="{}"'.format(filename)
             return response
     else:
-        return HttpResponse("MP3 file not found", status=404)
+        return HttpResponse("File not found", status=404)

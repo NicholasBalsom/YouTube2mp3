@@ -1,5 +1,6 @@
 import os
 import re
+from zipfile import ZipFile
 
 import spotipy
 from dotenv import load_dotenv
@@ -26,12 +27,18 @@ URL_REGEX_ERROR = "\n! Url does not match requested format. !"
 def youtube_playlist(p_url, song_list):
     playlist = Playlist(p_url)
     for url in playlist.video_urls:
-        data = upload_audio(url)
-        song_list.append(data)
+        upload_audio(url)
     return song_list
 
 
-def spotify(s_url, song_list):
+def clean_tmp():
+    for folder_name, sub_folders, file_names in os.walk("yt2mp3/tmp/songs"):
+        for filename in file_names:
+            file_path = os.path.join(folder_name, filename)
+            os.remove(file_path)
+
+
+def spotify(s_url):
     auth_manager = SpotifyOAuth(scope="user-library-read")
     sp = spotipy.Spotify(auth_manager=auth_manager)
 
@@ -41,21 +48,18 @@ def spotify(s_url, song_list):
                 song_name = song["name"]
                 artist_name = song["artists"][0]["name"]
                 vid = search_video(song_name, artist_name)
-                data = upload_audio(vid, True)
-                song_list.append(data)
+                upload_audio(vid)
 
         elif "playlist" in s_url:
             for song in sp.playlist_tracks(s_url)["items"]:
                 song_name = song["track"]["name"]
                 artist_name = song["track"]["artists"][0]["name"]
                 vid = search_video(song_name, artist_name)
-                data = upload_audio(vid, True)
-                song_list.append(data)
+                upload_audio(vid)
+
+        upload_zip()
     else:
         print(URL_REGEX_ERROR)
-        return [["Url", "Status"], [s_url, FAILED]]
-
-    return song_list
 
 
 def search_video(song_name, artist_name):
@@ -68,15 +72,31 @@ def search_video(song_name, artist_name):
         return result.watch_url
 
 
+def upload_zip():
+    with ZipFile("yt2mp3/tmp/zip/songs.zip", "w") as zip_object:
+        # Traverse all files in directory
+        for folder_name, sub_folders, file_names in os.walk("yt2mp3/tmp/songs"):
+            for filename in file_names:
+                # Create filepath of files in directory
+                file_path = os.path.join(folder_name, filename)
+                # Add files to zip file
+                zip_object.write(file_path, os.path.basename(file_path))
+
+        if os.path.exists("yt2mp3/tmp/zip/songs.zip"):
+            print("ZIP file created")
+            return "songs.zip"
+        else:
+            print("ZIP file not created")
+
+
 # !! This is the only utils function in use at the current version !!
 def upload_audio(yt_url):
     if re.search(r"(?:v=|\/)([0-9A-Za-z_-]{11}).*", yt_url):
-        print(f"\n>Downloading audio: {yt_url}", end="")
         yt = YouTube(yt_url)
         video_title = yt.title
         stream = yt.streams.filter(only_audio=True).first()
         mp3_filename = f"{video_title}.mp3"
-        stream.download(filename=mp3_filename, output_path="yt2mp3/tmp")
+        stream.download(filename=mp3_filename, output_path="yt2mp3/tmp/songs")
         return mp3_filename
     else:
         print("Invlaid url:")
