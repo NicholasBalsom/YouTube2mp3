@@ -18,6 +18,4 @@ function ThemeToggle() {
 
     body.classList.toggle('light-mode');
 
-
 }
-
