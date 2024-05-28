@@ -20,7 +20,7 @@ Fall back fonts^^*/
     --text-color-light: black;
     --text-color-dark: white;
     --color-dark-grey: rgb(45,45,45);
-    --color-background-grey: rgb(65, 65, 65);
+    --color-background-grey: rgb(0, 34, 51);
     --color-background-white: white;
     --color-background-special: rgb(155, 155, 155);
 }
