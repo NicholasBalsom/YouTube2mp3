@@ -116,6 +116,14 @@ section {
     background-image: url('./layer1.svg');
 }
 
+.svg-container {
+    position: center;
+    height: 100%;
+    width: 100%;
+    right:auto;
+    z-index: -2;
+}
+
 .blob-motion {
     position: absolute;
     top: 100%;
