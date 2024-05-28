@@ -47,7 +47,11 @@
             nostrum voluptatum deserunt?
         </p>
         <div class="svg-container">
-            <svg class="blob-motion" viewBox="0 0 960 540" width="1920" height="1080" xmlns="http://www.w3.org/2000/svg"
+            <div class="items">
+                {% block body %}
+                {% endblock %}
+            </div>
+            <svg class="blob-motion" viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
                 <g transform="translate(436.08803358568593 288.40860970064705)">
                     <path id="blob1"
@@ -76,7 +80,6 @@
     <section>
         <div class="spacer layer1"></div>
     </section>
-    {% block body %}
-    {% endblock %}
+  
 </body>
 </html>
