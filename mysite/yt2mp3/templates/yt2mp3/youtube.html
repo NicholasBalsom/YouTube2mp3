@@ -1,20 +1,21 @@
-{% extends "yt2mp3/layout.html" %}
-
-{% block body %}
-    <div class="top-content">
-        <h1>File Converter</h1>
-        <p>
-            Click and paste your url into the box below to start downloading!
-        </p>
-    </div>
-    <div class="form-group">
-        <h1>Youtube</h1>
-        <form action="{% url 'youtube' %}" method="post">
-            {% csrf_token %}
-            <!-- {{ form }} -->
-            <label for="input-box">Video URL:</label>
-            <input type="text" id="input-box" name="url">
-            <input type="submit" id="input-box-download" name="submit" value="Download">
-        </form>
-    </div>
+{% extends "yt2mp3/layout.html" %} {% block body %}
+<div class="top-content">
+  <h1>File Converter</h1>
+  <p>Click and paste your url into the box below to start downloading!</p>
+</div>
+<div class="form-group">
+  <h1>Youtube</h1>
+  <form action="{% url 'youtube' %}" method="post">
+    {% csrf_token %}
+    <!-- {{ form }} -->
+    <label for="input-box">Video URL:</label>
+    <input type="text" id="input-box" name="url" />
+    <input
+      type="submit"
+      id="input-box-download"
+      name="submit"
+      value="Download"
+    />
+  </form>
+</div>
 {% endblock %}

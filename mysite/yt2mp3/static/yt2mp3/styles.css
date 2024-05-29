@@ -15,179 +15,180 @@ Cursive
 Fantasy 
 Fall back fonts^^*/
 :root {
-    --text-color-base: white;
-    --text-color-nav: white;
-    --text-color-light: black;
-    --text-color-dark: white;
-    --color-dark-grey: rgb(45,45,45);
-    --color-background-grey: rgb(0, 34, 51);
-    --color-background-white: white;
-    --color-background-special: rgb(155, 155, 155);
+  --text-color-base: white;
+  --text-color-nav: white;
+  --text-color-light: black;
+  --text-color-dark: white;
+  --color-dark-grey: rgb(45, 45, 45);
+  --color-background-grey: rgb(0, 34, 51);
+  --color-background-white: white;
+  --color-background-special: rgb(155, 155, 155);
 }
 .light-mode {
-    background-color: var(--color-background-white);
-    color: var(--text-color-light);
+  background-color: var(--color-background-white);
+  color: var(--text-color-light);
 }
 .light-mode-special {
-    background-color: var(--color-background-special);
-    color: var(--text-color-light);
+  background-color: var(--color-background-special);
+  color: var(--text-color-light);
 }
 .light-mode-button {
-    background: brown;
+  background: brown;
 }
 .dark-mode {
-    color: var(--text-color-dark);
+  color: var(--text-color-dark);
 }
 body {
-    display: grid;
-    padding: 10px;
-    background-color: var(--color-background-grey);
-    color: white;
-    overflow-x: hidden;
+  display: grid;
+  padding: 10px;
+  background-color: var(--color-background-grey);
+  color: white;
+  overflow-x: hidden;
 }
 
 a {
-    color: var(--text-color-dark);
+  color: var(--text-color-dark);
 }
 h1 {
-    font-size: 2.0vw;
+  font-size: 2vw;
 }
 p {
-    font-size: 1.45vw;
+  font-size: 1.45vw;
 }
 hr {
-    position: relative;
-    border: none;
-    height: 0.035vh;
-    background: black;
+  position: relative;
+  border: none;
+  height: 0.035vh;
+  background: black;
 }
 .nav {
-    position: fixed;
-    z-index: 1000;
+  position: fixed;
+  z-index: 1000;
 }
-div.form-group{
-    top: 135%;
-    max-width: fit-content;
-    margin-top: auto;
-    margin-left: auto;
-    margin-right: auto;
-    position: absolute;
-    align-self: center;
-    z-index: 1000;
+div.form-group {
+  top: 135%;
+  max-width: fit-content;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  align-self: center;
+  z-index: 1000;
 }
 div.top-content {
-    position: absolute;
-    top: 0%;
+  position: absolute;
+  top: 0%;
 }
-input#input-box, input#input-box-download {
-    color: var(--text-color-dark);
-    background: var(--color-dark-grey);
-    border-color: var(--color-dark-grey);
-    border-radius: 5px;
-    border-style: none;
-    box-shadow: none;
-    outline-style: none;
-    font-size: 1.15vw;
-    padding: 0vh 1vw 0vh 1vw;
+input#input-box,
+input#input-box-download {
+  color: var(--text-color-dark);
+  background: var(--color-dark-grey);
+  border-color: var(--color-dark-grey);
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: none;
+  outline-style: none;
+  font-size: 1.15vw;
+  padding: 0vh 1vw 0vh 1vw;
 }
 input#input-box-download {
-    display: flex;
+  display: flex;
 }
 label {
-    font-size: 1.15vw;
+  font-size: 1.15vw;
 }
 /*-------------------------*/
 button.toggle-theme {
-    position: fixed;
-    right: 1vh;
-    bottom: 1vh;
-    color: var(--color-dark-grey);
-    background: var(--color-dark-grey);
-    border-color: var(--color-dark-grey);
-    border-radius: 5px;
-    border-style: none;
-    box-shadow: none;
-    outline-style: none;
-    padding: 0vh 1vh 0vh 1vh;
-    z-index: 1000;
+  position: fixed;
+  right: 1vh;
+  bottom: 1vh;
+  color: var(--color-dark-grey);
+  background: var(--color-dark-grey);
+  border-color: var(--color-dark-grey);
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: none;
+  outline-style: none;
+  padding: 0vh 1vh 0vh 1vh;
+  z-index: 1000;
 }
 /*-------------------------*/
 /*--Sections of Content Stylization*/
 section {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* max-height: fit-content; */
-    padding: 100px, 20vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* max-height: fit-content; */
+  padding: 100px, 20vw;
 }
 section.index-word-content {
-    position: absolute;
-    top: 0%;
-    /* background-color: white; */
+  position: absolute;
+  top: 0%;
+  /* background-color: white; */
 }
 section.index-body-content {
-    position: absolute;
-    top: 100%;
+  position: absolute;
+  top: 100%;
 
-    /* background-color: yellow; */
+  /* background-color: yellow; */
 }
 section.index-info-content {
-    position: absolute;
-    top: 200%;
-    /* background-color: red; */
+  position: absolute;
+  top: 200%;
+  /* background-color: red; */
 }
 /*-------------------------*/
 /*-Spacer SVG stylization-*/
-div.svg-container{
-    align-self: center;
-    justify-content: center;
-    display: flex;
-    margin-top: 25%;
-    height: 100%;
-    width: 100%;
+div.svg-container {
+  align-self: center;
+  justify-content: center;
+  display: flex;
+  margin-top: 25%;
+  height: 100%;
+  width: 100%;
 }
 svg.blob-motion {
-    position: absolute;
-    transform: translateY(-20%);
-    z-index: -2;
+  position: absolute;
+  transform: translateY(-20%);
+  z-index: -2;
 }
 div.spacer {
-    position: absolute;
-    aspect-ratio: 980/540;
-    width: 110%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    z-index: -3;
+  position: absolute;
+  aspect-ratio: 980/540;
+  width: 110%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: -3;
 }
 div.flip {
-    transform: rotate(180deg);
-    top: 0%;
-    right: 0%;
+  transform: rotate(180deg);
+  top: 0%;
+  right: 0%;
 }
 div.bottom {
-    margin-top: 35vh;
+  margin-top: 35vh;
 }
 div.layer1 {
-    background-image: url('./layer1.svg');
+  background-image: url("./layer1.svg");
 }
 /*-------------------------*/
 
 ::-webkit-scrollbar {
-    width: 8px;
-    position: fixed;
-  }
-  
+  width: 8px;
+  position: fixed;
+}
+
 ::-webkit-scrollbar-track {
-    background: var(--color-dark-grey);
+  background: var(--color-dark-grey);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 5px 5px 5px 5px;
+  background: #888;
+  border-radius: 5px 5px 5px 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+  background: #555;
 }
