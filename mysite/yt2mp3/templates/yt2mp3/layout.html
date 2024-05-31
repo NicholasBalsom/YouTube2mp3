@@ -27,21 +27,18 @@
         </li>
     </ul>
     <hr>
-
-
-
     <hr>
     <button class="toggle-theme" onclick="ThemeToggle()"> x </button>
     <script src="/static/yt2mp3/user.js?{% now " U" %}" />
     </script>
-
-
-    <div class="spacer layer1 flip"></div>
+    <!-- <div class="spacer layer1 flip"></div> -->
     <section class="pink">
         <div class="svg-container">
+            <div class="grouped-conatiner">
                 {% block body %}
                 {% endblock %}
-            <svg class="blob-motion" viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg"
+            </div>
+            <!-- <svg class="blob-motion" viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
                 <g transform="translate(436.08803358568593 288.40860970064705)">
                     <path id="blob1"
@@ -55,20 +52,65 @@
                         fill="#0066FF">
                     </path>
                 </g>
+            </svg> -->
+            <svg class="blob-motion" viewBox="0 -10 960 540" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+                <defs>
+                    <linearGradient id="grad1_0" x1="43.8%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="14.444444444444446%" stop-color="#001220" stop-opacity="1"></stop>
+                        <stop offset="85.55555555555554%" stop-color="#001220" stop-opacity="1"></stop>
+                    </linearGradient>
+                </defs>
+                <defs>
+                    <linearGradient id="grad2_0" x1="0%" y1="0%" x2="56.3%" y2="100%">
+                        <stop offset="14.444444444444446%" stop-color="#001220" stop-opacity="1"></stop>
+                        <stop offset="85.55555555555554%" stop-color="#001220" stop-opacity="1"></stop>
+                    </linearGradient>
+                </defs>
+                <g transform="translate(960, 0)">
+                    <path id="blob1"
+                        d="M0 486C-56 466.1 -112 446.2 -177.2 427.8C-242.4 409.4 -316.7 392.5 -343.7 343.7C-370.6 294.9 -350 214.1 -365.9 151.5C-381.7 88.9 -433.8 44.5 -486 0L0 0Z"
+                        fill="#FBAE3C"></path>
+                </g>
+                <g transform="translate(0, 540)">
+                    <path id="blob3"
+                        d="M0 -486C59.1 -469 118.2 -452 178.7 -431.5C239.2 -410.9 301.2 -386.8 343.7 -343.7C386.1 -300.5 409.1 -238.4 429.6 -177.9C450.1 -117.5 468 -58.8 486 0L0 0Z"
+                        fill="#FBAE3C"></path>
+                </g>
+                <g transform="translate(960, 0)" style="visibility: hidden">
+                    <path 
+                        id="blob2"
+                        d="M0 486C-50.5 440.6 -101 395.1 -153.1 369.6C-205.2 344 -258.8 338.2 -312.5 312.5C-366.3 286.9 -420.1 241.4 -449 186C-477.9 130.6 -482 65.3 -486 0L0 0Z"
+                        fill="#FBAE3C"></path>
+                </g>
+                <g transform="translate(0, 540)" style="visibility: hidden">
+                    <path 
+                        id="blob4"
+                        d="M0 -486C48.7 -446.7 97.4 -407.3 161.9 -390.8C226.4 -374.3 306.7 -380.6 343.7 -343.7C380.6 -306.7 374.3 -226.4 390.8 -161.9C407.3 -97.4 446.7 -48.7 486 0L0 0Z"
+                        fill="#FBAE3C"></path>
+                </g>
             </svg>
         </div>
         <script>
-            const tween = KUTE.fromTo(
+            const left = KUTE.fromTo(
+                '#blob3',
+                { path: '#blob3' },
+                { path: '#blob4' },
+                { repeat: 999, duration: 10000, yoyo: true }
+            )
+            const right = KUTE.fromTo(
                 '#blob1',
                 { path: '#blob1' },
                 { path: '#blob2' },
-                { repeat: 999, duration: 20000, yoyo: true }
+                { repeat: 999, duration: 10000, yoyo: true }
             )
-            tween.start()
+            left.start()
+            right.start()
         </script>
     </section>
-    <section>
+    <!-- <section>
         <div class="spacer layer1 bottom"></div>
-    </section>
+    </section> -->
 </body>
+
 </html>

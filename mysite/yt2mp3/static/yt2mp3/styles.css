@@ -26,8 +26,11 @@ Fall back fonts^^*/
 }
 .light-mode {
   background-color: var(--color-background-white);
-  color: var(--text-color-light);
+  /* color: var(--text-color-light); */
 }
+.light-mode-text {
+    color: var(--text-color-light);
+  }
 .light-mode-special {
   background-color: var(--color-background-special);
   color: var(--text-color-light);
@@ -50,11 +53,12 @@ a {
   color: var(--text-color-dark);
 }
 h1 {
-  font-size: 2vw;
+  text-align: center;
+  /* font-size: 1.75vw; */
 }
-p {
-  font-size: 1.45vw;
-}
+/* p {
+  font-size: 1.35vw;
+} */
 hr {
   position: relative;
   border: none;
@@ -65,19 +69,22 @@ hr {
   position: fixed;
   z-index: 1000;
 }
-div.form-group {
-  top: 135%;
+div.grouped-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: fit-content;
+    max-height: fit-content;
+}
+div.form-group{
   max-width: fit-content;
-  margin-top: auto;
-  margin-left: auto;
-  margin-right: auto;
-  position: absolute;
-  align-self: center;
+  margin-inline: auto;
   z-index: 1000;
 }
 div.top-content {
-  position: absolute;
-  top: 0%;
+  max-width: fit-content;
+  margin-inline: auto;
 }
 input#input-box,
 input#input-box-download {
@@ -88,14 +95,16 @@ input#input-box-download {
   border-style: none;
   box-shadow: none;
   outline-style: none;
-  font-size: 1.15vw;
-  padding: 0vh 1vw 0vh 1vw;
+  /* font-size: 1.15vw; */
 }
-input#input-box-download {
+input#input-box {
+    /* padding: 0% 1% 0% 1%; */
+    padding: auto;
+}
+input#input-box-download{
   display: flex;
-}
-label {
-  font-size: 1.15vw;
+  flex-wrap: wrap;
+  padding: 0vh 1vw 0vh 1vw;
 }
 /*-------------------------*/
 button.toggle-theme {
@@ -119,37 +128,41 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* max-height: fit-content; */
   padding: 100px, 20vw;
 }
-section.index-word-content {
-  position: absolute;
-  top: 0%;
-  /* background-color: white; */
+div.index-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    row-gap: 70vh;
 }
-section.index-body-content {
-  position: absolute;
-  top: 100%;
-
-  /* background-color: yellow; */
+section.index-info-content#welcome {
+    position: absolute;
+    align-self: center;
+    top: 0%;
+    background-color: #555;
 }
-section.index-info-content {
-  position: absolute;
-  top: 200%;
-  /* background-color: red; */
+section.index-info-content#about {
+  background-color: yellow;
+}
+section.index-info-content#main {
+  background-color: orange;
+}
+section.index-info-content#footer {
+    background-color: red;
 }
 /*-------------------------*/
 /*-Spacer SVG stylization-*/
 div.svg-container {
   align-self: center;
   justify-content: center;
-  display: flex;
-  margin-top: 25%;
   height: 100%;
   width: 100%;
 }
 svg.blob-motion {
   position: absolute;
+  background-size: cover;
+  width: 160%;
   transform: translateY(-20%);
   z-index: -2;
 }
@@ -157,6 +170,7 @@ div.spacer {
   position: absolute;
   aspect-ratio: 980/540;
   width: 110%;
+  height: 150%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -176,17 +190,18 @@ div.layer1 {
 /*-------------------------*/
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
   position: fixed;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-dark-grey);
+  background: none;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 5px 5px 5px 5px;
+  z-index: -3;
 }
 
 ::-webkit-scrollbar-thumb:hover {

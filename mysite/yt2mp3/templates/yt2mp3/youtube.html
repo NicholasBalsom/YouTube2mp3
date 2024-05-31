@@ -5,17 +5,17 @@
 </div>
 <div class="form-group">
   <h1>Youtube</h1>
-  <form action="{% url 'youtube' %}" method="post">
+<form action="{% url 'youtube' %}" method="post">
     {% csrf_token %}
     <!-- {{ form }} -->
     <label for="input-box">Video URL:</label>
     <input type="text" id="input-box" name="url" />
     <input
-      type="submit"
-      id="input-box-download"
-      name="submit"
-      value="Download"
+    type="submit"
+    id="input-box-download"
+    name="submit"
+    value="Download"
     />
-  </form>
+</form>
 </div>
 {% endblock %}

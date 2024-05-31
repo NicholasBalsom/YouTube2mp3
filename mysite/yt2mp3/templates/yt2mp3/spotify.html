@@ -5,17 +5,17 @@
 </div>
 <div class="form-group">
   <h1>Spotify</h1>
-  <form action="{% url 'spotify' %}" method="post">
+<form action="{% url 'spotify' %}" method="post">
     {% csrf_token %}
     <!-- {{ form }} -->
     <label for="input-box">Spotify Album/Playlist URL:</label>
     <input type="text" id="input-box" name="url" />
     <input
-      type="submit"
-      id="input-box-download"
-      name="submit"
-      value="Download"
+    type="submit"
+    id="input-box-download"
+    name="submit"
+    value="Download"
     />
-  </form>
+</form>
 </div>
 {% endblock %}
