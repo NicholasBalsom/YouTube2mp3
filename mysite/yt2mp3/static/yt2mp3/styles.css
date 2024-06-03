@@ -134,13 +134,12 @@ div.index-container {
     position: absolute;
     display: flex;
     flex-direction: column;
-    row-gap: 70vh;
+    row-gap: 35vh;
 }
 section.index-info-content#welcome {
     position: absolute;
     align-self: center;
     top: 0%;
-    background-color: #555;
 }
 section.index-info-content#about {
   background-color: yellow;
@@ -164,9 +163,10 @@ svg.blob-motion {
   background-size: cover;
   width: 160%;
   transform: translateY(-20%);
+  border: none;
   z-index: -2;
 }
-div.spacer {
+/* div.spacer {
   position: absolute;
   aspect-ratio: 980/540;
   width: 110%;
@@ -186,7 +186,7 @@ div.bottom {
 }
 div.layer1 {
   background-image: url("./layer1.svg");
-}
+} */
 /*-------------------------*/
 
 ::-webkit-scrollbar {
@@ -206,4 +206,10 @@ div.layer1 {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+@media screen and (min-width: 800px) {
+    svg {
+       transform: scale(300);
+    }
 }
