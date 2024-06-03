@@ -208,8 +208,8 @@ div.layer1 {
   background: #555;
 }
 
-@media screen and (min-width: 800px) {
-    svg {
-       transform: scale(300);
+@media screen and (max-width: 2000px) {
+    svg.blob-motion {
+       transform: scaleY(250%);
     }
 }
