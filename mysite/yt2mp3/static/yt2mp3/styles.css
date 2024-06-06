@@ -219,3 +219,7 @@ div.layer1 {
        transform: scaleY(250%);
     }
 }
+
+.form-input {
+    width: 600px;
+}
