@@ -56,9 +56,9 @@ h1 {
   text-align: center;
   /* font-size: 1.75vw; */
 }
-/* p {
-  font-size: 1.35vw;
-} */
+p {
+  text-wrap:balance;
+}
 hr {
   position: relative;
   border: none;
@@ -74,6 +74,7 @@ div.grouped-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     max-width: fit-content;
     max-height: fit-content;
 }
@@ -130,25 +131,20 @@ section {
   align-items: center;
   padding: 100px, 20vw;
 }
-div.index-container {
-    position: absolute;
+/* div.index-container {
     display: flex;
-    flex-direction: column;
-    row-gap: 35vh;
-}
-section.index-info-content#welcome {
-    position: absolute;
-    align-self: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: auto;
+} */
+section#welcome {
     top: 0%;
 }
-section.index-info-content#about {
-  background-color: yellow;
-}
-section.index-info-content#main {
-  background-color: orange;
-}
-section.index-info-content#footer {
-    background-color: red;
+/* section#about {
+  background-color: red;
+} */
+section#how-to {
+    margin-top: 10%;
 }
 /*-------------------------*/
 /*-Spacer SVG stylization-*/
@@ -165,6 +161,16 @@ svg.blob-motion {
   transform: translateY(-20%);
   border: none;
   z-index: -2;
+}
+div.index-svg-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+svg.icon-svg {
+    position: absolute;
+    transform: scale(25%);
+    z-index: -1;
 }
 /* div.spacer {
   position: absolute;
