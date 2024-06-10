@@ -145,6 +145,7 @@ section#welcome {
 } */
 section#how-to {
     margin-top: 10%;
+  text-align: center;
 }
 /*-------------------------*/
 /*-Spacer SVG stylization-*/
@@ -171,6 +172,11 @@ svg.icon-svg {
     position: absolute;
     transform: scale(25%);
     z-index: -1;
+}
+div.img-group:nth-child(n) {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10vh;
 }
 /* div.spacer {
   position: absolute;
