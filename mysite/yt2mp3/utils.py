@@ -73,7 +73,10 @@ def search_video(song_name, artist_name):
 
 
 def upload_zip():
-    with ZipFile("yt2mp3/tmp/songs/songs.zip", "w") as zip_object:
+    if not os.path.exists("yt2mp3/tmp/zip"):
+        os.makedirs("yt2mp3/tmp/zip")
+
+    with ZipFile("yt2mp3/tmp/zip/songs.zip", "w") as zip_object:
         # Traverse all files in directory
         for folder_name, sub_folders, file_names in os.walk("yt2mp3/tmp/songs"):
             for filename in file_names:
@@ -82,7 +85,7 @@ def upload_zip():
                 # Add files to zip file
                 zip_object.write(file_path, os.path.basename(file_path))
 
-        if os.path.exists("yt2mp3/tmp/songs/songs.zip"):
+        if os.path.exists("yt2mp3/tmp/zip/songs.zip"):
             print("ZIP file created")
             return "songs.zip"
         else:
