@@ -73,7 +73,7 @@ def search_video(song_name, artist_name):
 
 
 def upload_zip():
-    with ZipFile("yt2mp3/tmp/zip/songs.zip", "w") as zip_object:
+    with ZipFile("yt2mp3/tmp/songs/songs.zip", "w") as zip_object:
         # Traverse all files in directory
         for folder_name, sub_folders, file_names in os.walk("yt2mp3/tmp/songs"):
             for filename in file_names:
