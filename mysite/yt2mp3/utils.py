@@ -82,7 +82,7 @@ def upload_zip():
                 # Add files to zip file
                 zip_object.write(file_path, os.path.basename(file_path))
 
-        if os.path.exists("yt2mp3/tmp/zip/songs.zip"):
+        if os.path.exists("yt2mp3/tmp/songs/songs.zip"):
             print("ZIP file created")
             return "songs.zip"
         else:
