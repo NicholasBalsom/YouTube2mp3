@@ -1,19 +1,3 @@
-/* Arial (sans-serif)
-Verdana (sans-serif)
-Tahoma (sans-serif)
-Trebuchet MS (sans-serif)
-Times New Roman (serif)
-Georgia (serif)
-Garamond (serif)
-Courier New (monospace)
-Brush Script MT (cursive) */
-
-/* Serif
-Sans-serif
-Monospace
-Cursive
-Fantasy 
-Fall back fonts^^*/
 :root {
   --text-color-base: white;
   --text-color-nav: white;
@@ -32,8 +16,8 @@ Fall back fonts^^*/
     color: var(--text-color-light);
   }
 .light-mode-special {
-  background-color: var(--color-background-special);
-  color: var(--text-color-light);
+  background-color:var( --color-dark-grey);
+  color: var(--text-color-dark);
 }
 .light-mode-button {
   background: brown;
@@ -54,10 +38,11 @@ a {
 }
 h1 {
   text-align: center;
-  /* font-size: 1.75vw; */
 }
 p {
+  text-align: center;
   text-wrap:balance;
+  margin: 0px 10% 0px 10%;
 }
 hr {
   position: relative;
@@ -69,43 +54,40 @@ hr {
   position: fixed;
   z-index: 1000;
 }
-div.grouped-container {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: fit-content;
-    max-height: fit-content;
-}
 div.form-group{
+  z-index: 1000;
+}
+form {
   max-width: fit-content;
   margin-inline: auto;
-  z-index: 1000;
+}
+input{
+  max-width: fit-content;
+  border-radius: 10px 10px 10px 10px;
+  border: 2.5px solid#555 ;
+}
+input[type=submit]{
+  max-width: fit-content;
+  margin-inline: auto;
+}
+label {
+  background-color: white;
+  padding: 0px 5px 0px 5px;
+  border-radius: 10px 10px 10px 10px;
+  border: 2.5px solid#555 ;
+  color: black;
+}
+form a {
+  color: var(--text-color-light);
+  background-color: white;
+  padding: 0px 5px 0px 5px;
+  border: 2.5px solid#555 ;
+  border-radius: 10px 10px 10px 10px;
 }
 div.top-content {
   max-width: fit-content;
   margin-inline: auto;
-}
-input#input-box,
-input#input-box-download {
-  color: var(--text-color-dark);
-  background: var(--color-dark-grey);
-  border-color: var(--color-dark-grey);
-  border-radius: 5px;
-  border-style: none;
-  box-shadow: none;
-  outline-style: none;
-  /* font-size: 1.15vw; */
-}
-input#input-box {
-    /* padding: 0% 1% 0% 1%; */
-    padding: auto;
-}
-input#input-box-download{
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0vh 1vw 0vh 1vw;
+  margin-bottom: 20vh;
 }
 /*-------------------------*/
 button.toggle-theme {
@@ -129,22 +111,22 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px, 20vw;
 }
-/* div.index-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    column-gap: auto;
-} */
-section#welcome {
-    top: 0%;
+div.index-content p {
+  font-size: 1.5em;
 }
-/* section#about {
-  background-color: red;
-} */
+h1#title-page {
+  display: flex;
+  text-align: center;
+  text-wrap: balance;
+  font-size: 5vw;
+}
+h1#about-us {
+  font-size: 2.5em;
+}
 section#how-to {
-    margin-top: 10%;
+  top: 180%;
+  font-size: 1em;
   text-align: center;
 }
 /*-------------------------*/
@@ -158,8 +140,8 @@ div.svg-container {
 svg.blob-motion {
   position: absolute;
   background-size: cover;
-  width: 160%;
-  transform: translateY(-20%);
+  width: 200%;
+  transform: translate(-10%, -30%);
   border: none;
   z-index: -2;
 }
@@ -173,34 +155,16 @@ svg.icon-svg {
     transform: scale(25%);
     z-index: -1;
 }
-div.img-group:nth-child(n) {
+div.img-group {
   display: flex;
   flex-direction: row;
   column-gap: 10vh;
+  background-color: red;
 }
-/* div.spacer {
-  position: absolute;
-  aspect-ratio: 980/540;
-  width: 110%;
-  height: 150%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  z-index: -3;
+#img1 {
+  width: fit-content;
+  height: fit-content;
 }
-div.flip {
-  transform: rotate(180deg);
-  top: 0%;
-  right: 0%;
-}
-div.bottom {
-  margin-top: 35vh;
-}
-div.layer1 {
-  background-image: url("./layer1.svg");
-} */
-/*-------------------------*/
-
 ::-webkit-scrollbar {
   width: 10px;
   position: fixed;
@@ -224,8 +188,4 @@ div.layer1 {
     svg.blob-motion {
        transform: scaleY(250%);
     }
-}
-
-.form-input {
-    width: 600px;
 }

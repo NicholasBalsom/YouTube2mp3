@@ -1,8 +1,8 @@
 function ThemeToggle() {
     const body = document.body;
     // const links = document.querySelectorAll('a');
-    const texts = document.querySelectorAll(['h1', 'p', 'label', 'a'])
-    const inputs = document.querySelectorAll('input');
+    const texts = document.querySelectorAll(['h1', 'p', 'a'])
+    const inputs = document.querySelectorAll(['input', 'label']);
     const buttons = document.querySelectorAll('button');
 
     // links.forEach((link) => {

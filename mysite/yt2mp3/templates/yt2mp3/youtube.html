@@ -1,26 +1,23 @@
 {% extends "yt2mp3/layout.html" %} 
 
 {% block body %}
-
-    {% if message %}
-        <h1>{{ message }}</h1>
-    {% endif %}
-        <div class="top-content">
-            <h1>File Converter</h1>
-            <p>Click and paste your url into the box below to start downloading!</p>
-        </div>
-
-    <h1>Youtube</h1>
-    <form action="{% url 'youtube' %}" method="post">
-        {% csrf_token %}
-        {{ form }}
-        {% if not file %}
-            <input type="submit" name="submit" placeholder="Upload">
-        {% else %}  
-            <a href="{% url 'download' file %}">Download</a><br><br>
-            <a href="{% url 'youtube' %}">Back</a>
-        {% endif %}
-    </form>
+    <div class="top-content">
+        <h1>File Converter</h1>
+        <p>Click and paste your url into the box below to start downloading!</p>
+    </div>
+    
+    <div class="form-group"></div>
+        <form action="{% url 'youtube' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            {% if not file %}
+                <input type="submit" name="submit" placeholder="Upload">
+            {% else %}  
+                <a href="{% url 'download' file %}">Download</a>
+                <a href="{% url 'youtube' %}">Back</a>
+            {% endif %}
+        </form>
+    </div>
 
     <div class="index-svg-container">
         <svg viewBox="0 0 28.57 20" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" class="icon-svg">

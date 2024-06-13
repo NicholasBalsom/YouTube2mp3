@@ -33,10 +33,8 @@
     </script>
     <section class="pink">
         <div class="svg-container">
-            <div class="grouped-conatiner">
-                {% block body %}
-                {% endblock %}
-            </div>
+            {% block body %}
+            {% endblock %}
             <svg class="blob-motion" viewBox="0 -10 900 500" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
                 <defs>
@@ -95,15 +93,13 @@
     <section class="index-info-content" id="how-to">
         <h1>How To Use</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero eum, quasi
-          quae exercitationem sint, repellat praesentium cum expedita perspiciatis
-          laborum in voluptatem voluptatum beatae suscipit dicta blanditiis, ullam
-          ipsa vero?
+          Paste your URL into the input field, click "Submit", then click "Download" when its done!
         </p>
         <div class="img-group">
-            <img src="none" id="img1"></img>
-            <img src="none" id="img2"></img>
-            <img src="none" id="img3"></img>
+            <img src="{{ static }}yt2mp3\URLthing.png" alt="Paste URL" id="img1"></img>
+            <img src="{% static 'mysite\yt2mp3\static\yt2mp3\URLPasted.png' %}" alt="Url Pasted" id="img2"></img>
+            <img src="{% static 'mysite\yt2mp3\static\yt2mp3\URLSubmit.png' %}" alt="Submit URL" id="img3"></img>
+            <img src="{% static 'mysite\yt2mp3\static\yt2mp3\DownloadButton.png' %}" alt="Now Download" id="img4"></img>
         </div>
       </section>
 </body>
