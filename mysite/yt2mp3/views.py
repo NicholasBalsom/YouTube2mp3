@@ -63,7 +63,7 @@ def download(request, filename: str):
         with open(path, "rb") as file:
             # Create a response to download the file
             response = HttpResponse(file.read(), content_type=content_type)
-            response["Content-Disposition"] = f"attachment; filename='{filename}'"
+            response["Content-Disposition"] = 'attachment; filename="{}"'.format(filename)
             return response
     else:
         return HttpResponse("File not found", status=404)
