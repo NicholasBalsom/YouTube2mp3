@@ -37,9 +37,8 @@ def spotify(request):
         form = NewSpotipyForm(request.POST)
         if form.is_valid():
             url = form.cleaned_data["url"]
-            utils.spotify(url)
-            zip_filename = utils.upload_zip()
-            return render(request, "yt2mp3/spotify.html", {"file": zip_filename})
+            filename = utils.spotify(url)
+            return render(request, "yt2mp3/spotify.html", {"file": filename})
     else:
         form = NewSpotipyForm()
         return render(request, "yt2mp3/spotify.html", {"form": form})

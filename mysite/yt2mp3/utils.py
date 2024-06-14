@@ -41,14 +41,14 @@ def clean_tmp():
 def spotify(s_url):
     auth_manager = SpotifyOAuth(scope="user-library-read")
     sp = spotipy.Spotify(auth_manager=auth_manager)
-
-    if re.search(r"https:\/\/open.spotify.com\/(playlist|album)\/[A-Za-z0-9?=_-]{22,}(?:$|\?)", s_url):
+    if re.search(r"https:\/\/open.spotify.com\/(playlist|album|track)\/[A-Za-z0-9?=_-]{22,}(?:$|\?)", s_url):
         if "album" in s_url:
             for song in sp.album_tracks(s_url)["items"]:
                 song_name = song["name"]
                 artist_name = song["artists"][0]["name"]
                 vid = search_video(song_name, artist_name)
                 upload_audio(vid)
+            return upload_zip()
 
         elif "playlist" in s_url:
             for song in sp.playlist_tracks(s_url)["items"]:
@@ -56,8 +56,15 @@ def spotify(s_url):
                 artist_name = song["track"]["artists"][0]["name"]
                 vid = search_video(song_name, artist_name)
                 upload_audio(vid)
+            return upload_zip()
 
-        upload_zip()
+        elif "track" in s_url:
+            track = sp.track(s_url)
+            song_name = track["name"]
+            artist_name = track["artists"][0]["name"]
+            vid = search_video(song_name, artist_name)
+            return upload_audio(vid)
+
     else:
         print(URL_REGEX_ERROR)
 
