@@ -66,11 +66,14 @@ form {
 input{
   max-width: fit-content;
   border-radius: 10px 10px 10px 10px;
+  max-width: fit-content;
+  margin-inline: auto;
   border: 2.5px solid#555 ;
 }
 input[type=submit]{
-  max-width: fit-content;
-  margin-inline: auto;
+  margin: 0px auto;
+  display: block;
+  padding: 0px 20px 0px 20px;
 }
 label {
   background-color: white;
