@@ -92,11 +92,10 @@ def upload_zip():
             print("ZIP file not created")
 
 
-# !! This is the only utils function in use at the current version !!
 def upload_audio(yt_url):
     if re.search(r"(?:v=|\/)([0-9A-Za-z_-]{11}).*", yt_url):
         yt = YouTube(yt_url)
-        video_title = yt.title
+        video_title = re.sub(r"[^\w\-_\. ]", "_", yt.title)
         stream = yt.streams.filter(only_audio=True).first()
         mp3_filename = f"{video_title}.mp3"
         stream.download(filename=mp3_filename, output_path="yt2mp3/tmp/songs")

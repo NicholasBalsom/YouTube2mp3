@@ -14,6 +14,7 @@ def index(request):
 
 def youtube(request):
     if request.method == "POST":
+        utils.clean_tmp()
         # Create a form with the post data
         form = NewYouTubeForm(request.POST)
 
