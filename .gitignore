@@ -8,3 +8,5 @@ __pycache__/
 .cache
 
 tmp/
+*.mp3
+*.zip
