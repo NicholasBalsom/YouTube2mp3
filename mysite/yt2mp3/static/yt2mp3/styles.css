@@ -120,6 +120,8 @@ section#how-to {
   top: 35vh;
   font-size: 1em;
   text-align: center;
+  max-width: fit-content;
+  margin-inline: auto;
 }
 /*-------------------------*/
 /*-Spacer SVG stylization-*/
@@ -133,7 +135,7 @@ svg.blob-motion {
   position: absolute;
   background-size: cover;
   width: 200%;
-  transform: translate(-10%, -30%);
+  transform: translate(-35%, -50%);
   border: none;
   z-index: -2;
 }
@@ -175,6 +177,6 @@ div.img-group {
 
 @media screen and (max-width: 2000px) {
     svg.blob-motion {
-       transform: scaleY(150%);
+      transform: scaleY(150%);
     }
 }

@@ -1,5 +1,5 @@
 {% extends "yt2mp3/layout.html" %} 
-
+{% load static %}
 {% block body %}
     <div class="top-content">
         <h1>File Converter</h1>
@@ -27,4 +27,17 @@
             </g>
         </svg>
     </div>
+    
+    <section class="index-info-content" id="how-to">
+        <h1>How To Use</h1>
+        <p>
+          Paste your URL into the input field, click "Submit", then click "Download" when its done!
+        </p>
+        <div class="img-group">
+            <img src="{% static 'yt2mp3\YTInput.png' %}" alt="Paste URL" id="img1"></img>
+            <img src="{% static 'yt2mp3\YTPasted.png' %}" alt="Url Pasted" id="img2"></img>
+            <img src="{% static 'yt2mp3\YTSubmit.png' %}" alt="Submit URL" id="img3"></img>
+            <img src="{% static 'yt2mp3\YTDownload.png' %}" alt="Now Download" id="img4"></img>
+        </div>
+      </section>
 {% endblock %}
