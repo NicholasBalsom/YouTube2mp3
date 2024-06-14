@@ -10,7 +10,6 @@
 }
 .light-mode {
   background-color: var(--color-background-white);
-  /* color: var(--text-color-light); */
 }
 .light-mode-text {
     color: var(--text-color-light);
@@ -18,9 +17,6 @@
 .light-mode-special {
   background-color:var( --color-dark-grey);
   color: var(--text-color-dark);
-}
-.light-mode-button {
-  background: brown;
 }
 .dark-mode {
   color: var(--text-color-dark);
@@ -89,22 +85,18 @@ div.top-content {
   margin-inline: auto;
   margin-bottom: 20vh;
 }
-/*-------------------------*/
 button.toggle-theme {
   position: fixed;
   right: 1vh;
   bottom: 1vh;
-  color: var(--color-dark-grey);
-  background: var(--color-dark-grey);
   border-color: var(--color-dark-grey);
   border-radius: 5px;
   border-style: none;
   box-shadow: none;
   outline-style: none;
-  padding: 0vh 1vh 0vh 1vh;
+  padding: 0vh 0vh 1px 0vh;
   z-index: 1000;
 }
-/*-------------------------*/
 /*--Sections of Content Stylization*/
 section {
   position: relative;
@@ -125,7 +117,7 @@ h1#about-us {
   font-size: 2.5em;
 }
 section#how-to {
-  top: 180%;
+  top: 35vh;
   font-size: 1em;
   text-align: center;
 }
@@ -156,14 +148,11 @@ svg.icon-svg {
     z-index: -1;
 }
 div.img-group {
-  display: flex;
-  flex-direction: row;
-  column-gap: 10vh;
-  background-color: red;
+  flex-wrap: wrap;
 }
-#img1 {
-  width: fit-content;
-  height: fit-content;
+#img1, #img2, #img3, #img4{
+  border-radius: 10px 10px 10px 10px;
+  border: 3px solid var(--color-background-grey);
 }
 ::-webkit-scrollbar {
   width: 10px;
@@ -186,6 +175,6 @@ div.img-group {
 
 @media screen and (max-width: 2000px) {
     svg.blob-motion {
-       transform: scaleY(250%);
+       transform: scaleY(150%);
     }
 }
