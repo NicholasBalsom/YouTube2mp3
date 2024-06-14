@@ -1,3 +1,4 @@
+/* Essentially variables/classes */
 :root {
   --text-color-base: white;
   --text-color-nav: white;
@@ -21,6 +22,8 @@
 .dark-mode {
   color: var(--text-color-dark);
 }
+/* ---------------------- */
+/* Body elements/Text elements */
 body {
   display: grid;
   padding: 10px;
@@ -28,7 +31,6 @@ body {
   color: white;
   overflow-x: hidden;
 }
-
 a {
   color: var(--text-color-dark);
 }
@@ -46,10 +48,14 @@ hr {
   height: 0.035vh;
   background: black;
 }
+/* ---------------------- */
+/* Nav bar */
 .nav {
   position: fixed;
   z-index: 1000;
 }
+/* ---------------------- */
+/* Everything to do with the form group */
 div.form-group{
   z-index: 1000;
 }
@@ -80,29 +86,12 @@ form a {
   border: 2.5px solid#555 ;
   border-radius: 10px 10px 10px 10px;
 }
+/* ---------------------- */
+/* The content of all of the html docs */
 div.top-content {
   max-width: fit-content;
   margin-inline: auto;
   margin-bottom: 20vh;
-}
-button.toggle-theme {
-  position: fixed;
-  right: 1vh;
-  bottom: 1vh;
-  border-color: var(--color-dark-grey);
-  border-radius: 5px;
-  border-style: none;
-  box-shadow: none;
-  outline-style: none;
-  padding: 0vh 0vh 1px 0vh;
-  z-index: 1000;
-}
-/*--Sections of Content Stylization*/
-section {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 div.index-content p {
   font-size: 1.5em;
@@ -116,6 +105,14 @@ h1#title-page {
 h1#about-us {
   font-size: 2.5em;
 }
+/* ---------------------- */
+/*--Sections of Content Stylization*/
+section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 section#how-to {
   top: 35vh;
   font-size: 1em;
@@ -123,8 +120,8 @@ section#how-to {
   max-width: fit-content;
   margin-inline: auto;
 }
-/*-------------------------*/
-/*-Spacer SVG stylization-*/
+/* ---------------------- */
+/* SVG stylization */
 div.svg-container {
   align-self: center;
   justify-content: center;
@@ -149,12 +146,28 @@ svg.icon-svg {
     transform: scale(25%);
     z-index: -1;
 }
+/* ---------------------- */
+/* Everything with the images */
 div.img-group {
   flex-wrap: wrap;
 }
 #img1, #img2, #img3, #img4{
   border-radius: 10px 10px 10px 10px;
   border: 3px solid var(--color-background-grey);
+}
+/* ---------------------- */
+/* User interface items like the scroll bar and theme button */
+button.toggle-theme {
+  position: fixed;
+  right: 1vh;
+  bottom: 1vh;
+  border-color: var(--color-dark-grey);
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: none;
+  outline-style: none;
+  padding: 0vh 0vh 1px 0vh;
+  z-index: 1000;
 }
 ::-webkit-scrollbar {
   width: 10px;
@@ -174,9 +187,11 @@ div.img-group {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-
+/* ---------------------- */
+/* svg responsivity when the screen gets minimized */
 @media screen and (max-width: 2000px) {
     svg.blob-motion {
       transform: scaleY(150%);
     }
 }
+/* ---------------------- */
